@@ -294,6 +294,7 @@ void UCI::loop(int argc, char* argv[]) {
 	/// HELP system
 	else if (token =="help" || token == "HELP") {
 	jmppoint:
+		clrScr();
 		sync_cout << "---UCI Commands---" << sync_endl;
 		sync_cout << "quit		Exit Stockfish" << sync_endl;
 		sync_cout << "stop		halt move search" << sync_endl;
@@ -316,6 +317,7 @@ void UCI::loop(int argc, char* argv[]) {
 		
 	}
 	else if (token == "ponderhit/help") {
+		clrScr();
 		printf("[ponderhit]\nThe user has played the expected move. This will be sent if the engine was told\n"
 			"to ponder on the same move the user has played.\n"
 			"The engine should continue searching but switch from pondering to normal search.\n\n");
@@ -324,6 +326,7 @@ void UCI::loop(int argc, char* argv[]) {
 		goto jmppoint;
 	}
 	else if (token == "uci/help") {
+		clrScr();
 		printf("[uci]\nTell engine to use the uci (universal chess interface).\n"
 			"This will be sent once, by a GUI, as a first command after program boot\n"
 			"to tell the engine to switch to uci mode.\n\n"
@@ -338,6 +341,7 @@ void UCI::loop(int argc, char* argv[]) {
 		goto jmppoint;
 	}
 	else if (token == "setoption/help") {
+		clrScr();
 		printf("[setoption]\nsetoption name <id> [value <x>]\n"
 			"This is sent to the engine when the user wants to change the internal parameters\n"
 			"of the engine. For the 'button' type no value is needed.\n\n"
@@ -358,6 +362,7 @@ void UCI::loop(int argc, char* argv[]) {
 		goto jmppoint;
 	}
 	else if (token == "go/help") {
+		clrScr();
 		printf("[go]\nStart calculating on the current position set up with the 'position'\n"
 		"command.\n\n"
 		"There are a number of parameters that can follow this command and all\n"
@@ -367,6 +372,7 @@ void UCI::loop(int argc, char* argv[]) {
 		"The following are the parameters and their associated values\n\n");
 		spcInput("Press <return> to continue viewing parameters --> ");
 
+		clrScr();
 		printf("[go parameters]\n\n");
 		printf("* searchmoves <move1> .... <movei>\n"
 		"	restrict search to these moves only\n"
@@ -376,6 +382,7 @@ void UCI::loop(int argc, char* argv[]) {
 		"	initial position.\n\n");
 		spcInput("Press <return> to continue viewing parameters --> ");
 
+		clrScr();
 		printf("[go parameters]\n\n");
 		printf("* ponder\n"
 		"	start searching in pondering mode.\n"
@@ -392,6 +399,7 @@ void UCI::loop(int argc, char* argv[]) {
 		"	to ponder on the suggested move.\n\n");
 		spcInput("Press <return> to continue viewing parameters --> ");
 
+		clrScr();
 		printf("[go parameters]\n\n");
 		printf("* wtime <x>\n"
 		"	white has x msec left on the clock\n"
@@ -412,6 +420,7 @@ void UCI::loop(int argc, char* argv[]) {
 	   	"	search x nodes only\n\n");
 		spcInput("Press <return> to continue viewing parameters --> ");
 
+		clrScr();
 		printf("[go parameters]\n\n");
 		printf("* mate <x>\n"
 		"	search for a mate in x moves\n"
@@ -425,6 +434,7 @@ void UCI::loop(int argc, char* argv[]) {
 
 	}
 	else if (token == "ucinewgame/help") {
+		clrScr();
 		printf("[ucinewgame]\nThis is sent to the engine when the next search (started with 'position' and\n"
 			"'go') will be from a different game. This can be a new game the engine should\n"
 			"play or a new game it should analyse but also the next position from a testsuite\n"
@@ -442,6 +452,7 @@ void UCI::loop(int argc, char* argv[]) {
 		goto jmppoint;
 	}
 	else if (token == "isready/help") {
+		clrScr();
 		printf("[isready]\nThis is used to synchronize the engine with the GUI.\n"
 			"When the GUI has sent a command or multiple commands that can take some time\n"
 			"to complete, this command can be used to wait for the engine to be ready again\n"
@@ -458,6 +469,7 @@ void UCI::loop(int argc, char* argv[]) {
 		goto jmppoint;
 	}
 	else if (token == "position/help") {
+		clrScr();
 		printf("[position]\nposition [fen <fenstring> | startpos ]  moves <move1> .... <movei>\n"
 			"Set up the position described in fenstring on the internal board and\n"
 			"play the moves on the internal chess board.\n\n"
