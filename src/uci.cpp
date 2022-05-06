@@ -39,6 +39,7 @@ namespace Stockfish {
 extern vector<string> setup_bench(const Position&, istream&);
 
 /// HELP system
+void clrScr();
 void spcInput(string mesg);
 char theChar;
 
@@ -549,6 +550,13 @@ string UCI::move(Move m, bool chess960) {
 }
 
 /// HELP System
+void clrScr() {
+
+	for(int x=0; x<24; x++) {
+		sync_cout << "\n" << sync_endl;
+	}
+} 
+
 void spcInput(string mesg) { 
 
 	cout << mesg;
