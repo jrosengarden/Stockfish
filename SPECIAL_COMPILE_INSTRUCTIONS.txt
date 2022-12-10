@@ -1,0 +1,31 @@
+12/4/22 (JR):
+
+SPECIAL COMPILING INSTRUCTIONS:
+
+1.	Nothing changes when compiling on the MAC.  The instructions
+	in the Readme.md file are valid
+
+2.	Nothing really changes when compiling on the WIN11 virtual.
+	The instructions in the Readme.md file are valid
+
+3.	HOWEVER.....there is a new bash script (makefish.sh) that 
+	was downloaded from:
+	https://github.com/glinscott/fishtest/wiki/Building-Stockfish-on-Windows
+
+	(The new bash script file (makefish.sh) is in both the src and src.15 folders)
+
+	This script will do the following:
+	1)	Update the Msys2 tools (on Win11) if necessary
+	2)	download the latest copy of Stockfish source
+		- a new zip file (master.zip) is created in the src directory
+	3)	Unzip the master.zip file into a new directory named
+		Stockfish.master in the src directory
+	4)	The script will then proceed to compile & test the
+		resultant executable saving the fastest compiled version
+		.exe file in the src directory...not the Stockfish.master dir.
+
+	Bottom Line:  	The only reason to run this bash script would be
+			to obtain the latest copy of the Stockfish source
+			which I would then need to add all of MY mods to
+			it.
+`
